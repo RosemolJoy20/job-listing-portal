@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import Users from './components/Users';
+import Jobs from './components/Jobs';
 
 function App() {
     return (
         <div className="container-fluid">
-            <Users />
+            <Jobs />
         </div>
     );
 }

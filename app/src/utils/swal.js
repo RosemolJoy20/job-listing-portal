@@ -1,31 +1,28 @@
 
 import Swal from 'sweetalert2';
 
-export const swalForm = (name, email, phone, password, callback) => {
+export const swalForm = (title, description, skills, callback) => {
     Swal.fire({
-        title: name.length > 0 ? 'Update record' : 'Create record',
-        html: `<input id="txt-name" class="swal2-input" placeholder="Name" value='${name}' />
-            <input id="txt-email" class="swal2-input" placeholder="Email" value='${email}' />
-            <input id="txt-phone" class="swal2-input" placeholder="Phone" value='${phone}' />
-            <input id="txt-password" type="password" class="swal2-input" placeholder="Password" value='${password}' />`,
+        title: title.length > 0 ? 'Update job' : 'Create job',
+        html: `<input id="txt-title" class="swal2-input" placeholder="Title" value='${title}' />
+            <input id="txt-description" class="swal2-input" placeholder="Description" value='${description}' />
+            <input id="txt-skills" class="swal2-input" placeholder="Skills" value='${skills}' />`,
         showCancelButton: true,
-        confirmButtonText: name.length > 0 ? 'Update' : 'Create',
+        confirmButtonText: title.length > 0 ? 'Update' : 'Create',
         showLoaderOnConfirm: true,
         preConfirm: () => {
-            const name = document.getElementById('txt-name').value;
-            const email = document.getElementById('txt-email').value;
-            const phone = document.getElementById('txt-phone').value;
-            const password = document.getElementById('txt-password').value;
-            if (!name || !email || !phone || !password)
+            const title = document.getElementById('txt-title').value;
+            const description = document.getElementById('txt-description').value;
+            const skills = document.getElementById('txt-skills').value;
+            if (!title || !description || !skills)
                 return Swal.showValidationMessage(`Please provide all fields.`);
         },
     }).then(result => {
         if(result.value) {
-            const name = document.getElementById('txt-name').value;
-            const email = document.getElementById('txt-email').value;
-            const phone = document.getElementById('txt-phone').value;
-            const password = document.getElementById('txt-password').value;
-            callback({name, email, phone, password});
+            const title = document.getElementById('txt-title').value;
+            const description = document.getElementById('txt-description').value;
+            const skills = document.getElementById('txt-skills').value;
+            callback({title, description, skills});
         }
     });
 }

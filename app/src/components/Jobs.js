@@ -1,8 +1,9 @@
-import React, {useState, useEffect} from 'react';
-import userService from "../services/user";
-import {swalError, swalSuccess, swalInfo, swalForm} from "../utils/swal";
+import React, { useState, useEffect } from 'react';
+import jobService from "../services/job";
+import { swalError, swalSuccess, swalInfo, swalForm } from "../utils/swal";
 import $ from 'jquery';
 import dt from 'datatables.net';
+import moment from 'moment';
 
 export default function Users(props) {
     const [rows, setRows] = useState([]);
@@ -14,19 +15,24 @@ export default function Users(props) {
     const handleCreate = e => {
         e.preventDefault();
 
-        swalForm('', '', '', '', async val => {
-                await userService.add(val.name, val.email, val.phone, val.password)
+        swalForm('', '', '', async val => {
+            let data = {
+                ...val,
+                dateCreated: moment().format(),
+                dateUpdated: moment().format()
+            };
+            await jobService.add(data)
                 .then(result => {
                     if (result.error) {
                         swalError(result.error);
                         return;
                     }
 
-                    swalSuccess('User added successfully!');
+                    swalSuccess('Job added successfully!');
                     destroy();
                     reload();
                 });
-            });
+        });
     }
 
     const destroy = () => {
@@ -35,7 +41,7 @@ export default function Users(props) {
     }
 
     const reload = async () => {
-        await userService.getAll()
+        await jobService.getAll()
             .then(result => {
                 if (result.error) {
                     swalError(result.error);
@@ -45,10 +51,11 @@ export default function Users(props) {
                 const data = result.data;
                 const table = $('#table').DataTable({
                     columns: [
-                        { data: 'name', title: 'Name' },
-                        { data: 'email', title: 'Email' },
-                        { data: 'phone', title: 'Phone' },
-                        { data: 'password', title: 'Password' }
+                        { data: 'title', title: 'Name' },
+                        { data: 'description', title: 'Description' },
+                        { data: 'skills', title: 'Skills' },
+                        { data: 'dateCreated', title: 'Date Created' },
+                        { data: 'dateUpdated', title: 'Date Updated' }
                     ],
                     data: data
                 });
@@ -63,37 +70,37 @@ export default function Users(props) {
                 });
 
                 $('#btn-delete').click(function () {
-                    if(!table.row('.selected').data()) {
+                    if (!table.row('.selected').data()) {
                         swalInfo('Select a row to delete it.');
                         return;
                     }
 
                     const id = table.row('.selected').data()._id;
-                    userService.delete(id).then(function (result) {
+                    jobService.delete(id).then(function (result) {
                         if (result.error) {
                             swalError(result.error);
                             return;
                         }
 
-                        swalSuccess('User deleted successfully!');
+                        swalSuccess('Job deleted successfully!');
                         table.row('.selected').remove().draw(false);
                     });
                 });
 
                 $('#btn-edit').click(function () {
-                    if(!table.row('.selected').data()) {
+                    if (!table.row('.selected').data()) {
                         swalInfo('Select a row to edit it.');
                         return;
                     }
                     const data = table.row('.selected').data();
                     swalForm(data.name, data.email, data.phone, data.password, values => {
-                        userService.update(data._id, values).then(result => {
+                        jobService.update(data._id, values).then(result => {
                             if (result.error) {
                                 swalError(result.error);
                                 return;
                             }
 
-                            swalSuccess('User updated successfully!');
+                            swalSuccess('Job updated successfully!');
                             table.row('.selected').data({
                                 ...data,
                                 name: values.name,
@@ -108,10 +115,10 @@ export default function Users(props) {
     }
 
     return (
-        <div className="container-fluid" style={{marginTop: '30px'}}>
+        <div className="container-fluid" style={{ marginTop: '30px' }}>
             <div className="row">
                 <div className="col-sm-12 col-md-12">
-                    <h4>Users</h4>
+                    <h4>Jobs</h4>
                 </div>
             </div>
 
@@ -122,9 +129,9 @@ export default function Users(props) {
                     <button id="btn-edit" className="btn btn-outline-info btn-sm m-1">Edit selected row</button>
                 </div>
             </div>
-            <div className="row" style={{marginTop: '30px'}}>
+            <div className="row" style={{ marginTop: '30px' }}>
                 <div className="col-sm-12 col-md-12">
-                    <table id="table" className="table table-striped table-hover" style={{border: '1px solid #000'}}></table>
+                    <table id="table" className="table table-striped table-hover" style={{ border: '1px solid #000' }}></table>
                 </div>
             </div>
         </div>

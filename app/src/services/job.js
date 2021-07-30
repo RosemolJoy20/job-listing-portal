@@ -2,15 +2,12 @@ import axios from 'axios';
 
 export default class {
 
-    static add = async (name, email, phone, password) => {
+    static add = async obj => {
         let result = {
             data: null,
             error: null
         };
-
-        const d = {name, email, phone, password};
-
-        await axios.post(`${process.env.REACT_APP_API_URL}/users/`, d)
+        await axios.post(`${process.env.REACT_APP_API_URL}/jobs/`, obj)
             .then((resp) => {
                 if (resp.status === 200) {
                     result.data = resp.data;
@@ -29,7 +26,7 @@ export default class {
             error: null
         };
 
-        await axios.get(`${process.env.REACT_APP_API_URL}/users/${id}`)
+        await axios.get(`${process.env.REACT_APP_API_URL}/jobs/${id}`)
             .then((resp) => {
                 if (resp.status === 200) {
                     result.data = resp.data;
@@ -48,7 +45,7 @@ export default class {
             error: null
         };
 
-        await axios.get(`${process.env.REACT_APP_API_URL}/users/`)
+        await axios.get(`${process.env.REACT_APP_API_URL}/jobs/`)
             .then((resp) => {
                 if (resp.status === 200) {
                     result.data = resp.data;
@@ -67,7 +64,7 @@ export default class {
             error: null
         };
 
-        await axios.delete(`${process.env.REACT_APP_API_URL}/users/${id}`)
+        await axios.delete(`${process.env.REACT_APP_API_URL}/jobs/${id}`)
             .then((resp) => {
                 if (resp.status === 200) {
                     result.data = resp.data;
@@ -86,7 +83,7 @@ export default class {
             error: null
         };
 
-        await axios.post(`${process.env.REACT_APP_API_URL}/users/${id}`, data)
+        await axios.post(`${process.env.REACT_APP_API_URL}/jobs/${id}`, data)
             .then((resp) => {
                 if (resp.status === 200) {
                     result.data = resp.data;
