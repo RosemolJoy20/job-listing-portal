@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+// model properties
 const schema = new mongoose.Schema({
         title: {
             type: String,

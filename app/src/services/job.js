@@ -1,14 +1,19 @@
 import axios from 'axios';
 
+// this is our API manager, all calls to manager will stay here
 export default class {
 
+    // method to call our API to create new job object
     static add = async obj => {
         let result = {
             data: null,
             error: null
         };
+        // using axios lib to call to our API
         await axios.post(`${process.env.REACT_APP_API_URL}/jobs/`, obj)
             .then((resp) => {
+                // if success
+                // get data and set it to a local variable
                 if (resp.status === 200) {
                     result.data = resp.data;
                 }
@@ -17,6 +22,7 @@ export default class {
                 result.error = err.response.data;
             });
 
+        // return our variable
         return result;
     }
 
