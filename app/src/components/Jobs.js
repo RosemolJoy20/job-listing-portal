@@ -122,15 +122,15 @@ export default function Users(props) {
         <div className="container-fluid" style={{ marginTop: '30px' }}>
             <div className="row">
                 <div className="col-sm-12 col-md-12">
-                    <h4>Jobs</h4>
+                    <h4>Jobs Listing Portal</h4>
                 </div>
             </div>
 
             <div className="row">
                 <div className="col-sm-12 col-md-12 text-right">
-                    <button className="btn btn-outline-primary btn-sm m-1" onClick={e => handleCreate(e)}>Create</button>
-                    <button id="btn-delete" className="btn btn-outline-danger btn-sm m-1">Delete selected row</button>
-                    <button id="btn-edit" className="btn btn-outline-info btn-sm m-1">Edit selected row</button>
+                    <button className="btn btn-outline-primary m-1" onClick={e => handleCreate(e)}>Create</button>
+                    <button id="btn-delete" className="btn btn-outline-danger m-1">Delete selected row</button>
+                    <button id="btn-edit" className="btn btn-outline-info m-1">Edit selected row</button>
                 </div>
             </div>
             <div className="row" style={{ marginTop: '30px' }}>
