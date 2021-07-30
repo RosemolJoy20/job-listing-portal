@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import jobService from "../services/job";
-import { swalError, swalSuccess, swalInfo, swalForm } from "../utils/swal";
+import { swalError, swalSuccess, swalInfo, swalForm, swalDeleteForm } from "../utils/swal";
 import $ from 'jquery';
 import dt from 'datatables.net';
 import moment from 'moment';
@@ -75,15 +75,17 @@ export default function Users(props) {
                         return;
                     }
 
-                    const id = table.row('.selected').data()._id;
-                    jobService.delete(id).then(function (result) {
-                        if (result.error) {
-                            swalError(result.error);
-                            return;
-                        }
-
-                        swalSuccess('Job deleted successfully!');
-                        table.row('.selected').remove().draw(false);
+                    swalDeleteForm(() => {
+                        const id = table.row('.selected').data()._id;
+                        jobService.delete(id).then(function (result) {
+                            if (result.error) {
+                                swalError(result.error);
+                                return;
+                            }
+    
+                            swalSuccess('Job deleted successfully!');
+                            table.row('.selected').remove().draw(false);
+                        });
                     });
                 });
 

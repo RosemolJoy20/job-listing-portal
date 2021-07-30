@@ -27,7 +27,7 @@ export const swalForm = (title, description, skills, callback) => {
     });
 }
 
-export const swalDeleteForm = ({ callback }) => {
+export const swalDeleteForm = callback => {
     Swal.fire({
         title: 'Are you sure?',
         text: "You won't be able to revert this!",
