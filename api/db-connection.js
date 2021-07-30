@@ -1,8 +1,8 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
-const connectionString = "mongodb://localhost:27017/users-crud";
 
 module.exports = () => {
-    mongoose.connect(connectionString, {
+    mongoose.connect(process.env.DB_CONNECTION_STRING, {
         useCreateIndex: true,
         useNewUrlParser: true,
         poolSize: 5,

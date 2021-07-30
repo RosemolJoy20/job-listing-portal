@@ -93,7 +93,11 @@ export default function Users(props) {
                         return;
                     }
                     const data = table.row('.selected').data();
-                    swalForm(data.name, data.email, data.phone, data.password, values => {
+                    swalForm(data.title, data.description, data.skills, values => {
+                        values =  {
+                            ...values,
+                            dateUpdated: moment().format()
+                        };
                         jobService.update(data._id, values).then(result => {
                             if (result.error) {
                                 swalError(result.error);
@@ -103,10 +107,9 @@ export default function Users(props) {
                             swalSuccess('Job updated successfully!');
                             table.row('.selected').data({
                                 ...data,
-                                name: values.name,
-                                email: values.email,
-                                phone: values.phone,
-                                password: values.password
+                                title: values.title,
+                                description: values.description,
+                                skills: values.skills
                             });
                         });
                     });

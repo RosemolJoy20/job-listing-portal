@@ -3,7 +3,7 @@ import Swal from 'sweetalert2';
 
 export const swalForm = (title, description, skills, callback) => {
     Swal.fire({
-        title: title.length > 0 ? 'Update job' : 'Create job',
+        title: title && title.length > 0 ? 'Update job' : 'Create job',
         html: `<input id="txt-title" class="swal2-input" placeholder="Title" value='${title}' />
             <input id="txt-description" class="swal2-input" placeholder="Description" value='${description}' />
             <input id="txt-skills" class="swal2-input" placeholder="Skills" value='${skills}' />`,
