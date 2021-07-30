@@ -110,11 +110,7 @@ export default function Users(props) {
 
                             swalSuccess('Job updated successfully!');
                             table.row('.selected').data({
-                                ...data,
-                                title: values.title,
-                                description: values.description,
-                                skills: values.skills,
-                                dateUpdated: moment().fromNow()
+                                ...values
                             });
                         });
                     });
