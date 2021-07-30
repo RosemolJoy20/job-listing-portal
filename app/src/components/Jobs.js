@@ -6,8 +6,6 @@ import dt from 'datatables.net';
 import moment from 'moment';
 
 export default function Users(props) {
-    const [rows, setRows] = useState([]);
-    const [api, setApi] = useState(null);
     useEffect(() => {
         (async () => reload())();
     }, []);
@@ -54,8 +52,12 @@ export default function Users(props) {
                         { data: 'title', title: 'Name' },
                         { data: 'description', title: 'Description' },
                         { data: 'skills', title: 'Skills' },
-                        { data: 'dateCreated', title: 'Date Created' },
-                        { data: 'dateUpdated', title: 'Date Updated' }
+                        { data: 'dateCreated', title: 'Date Created', render: function ( data, type, row, meta ) {
+                            return moment(data).fromNow();
+                        }},
+                        { data: 'dateUpdated', title: 'Date Updated', render: function ( data, type, row, meta ) {
+                            return moment(data).fromNow();
+                        }}
                     ],
                     data: data
                 });
@@ -111,7 +113,8 @@ export default function Users(props) {
                                 ...data,
                                 title: values.title,
                                 description: values.description,
-                                skills: values.skills
+                                skills: values.skills,
+                                dateUpdated: moment().fromNow()
                             });
                         });
                     });
