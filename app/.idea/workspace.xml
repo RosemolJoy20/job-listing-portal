@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ed45d079-3914-4cc2-897e-7665ce79ec52" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="ProjectId" id="1YIIJzIQhixQChn5hHzUEYP1BLL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Work\66. FO414DC3CD2C8 - login-signup-logout-and-crud-operations-mern\app\public" />
+      <recent name="D:\Work\63. FO81BC5543D08 - gym-app\app\src\components" />
+      <recent name="D:\Work\56. FO21146739B88 - customers-projects-orders-employees-managemenet-mern-app\app\public" />
+      <recent name="D:\Work\56. FO21146739B88 - customers-projects-orders-employees-managemenet-mern-app\app\src\components" />
+      <recent name="D:\Work\56. FO21146739B88 - customers-projects-orders-employees-managemenet-mern-app\app\src\services" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Work\63. FO81BC5543D08 - gym-app\app\public" />
+      <recent name="D:\Work\56. FO21146739B88 - customers-projects-orders-employees-managemenet-mern-app\app\public" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ed45d079-3914-4cc2-897e-7665ce79ec52" name="Default Changelist" comment="" />
+      <created>1582623613792</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582623613792</updated>
+      <workItem from="1582623616742" duration="11942000" />
+      <workItem from="1582650771816" duration="10695000" />
+      <workItem from="1582693166395" duration="181000" />
+      <workItem from="1582911956294" duration="960000" />
+      <workItem from="1582956014091" duration="26842000" />
+      <workItem from="1583045331807" duration="2036000" />
+      <workItem from="1583051650081" duration="326000" />
+      <workItem from="1583054616981" duration="15014000" />
+      <workItem from="1583129015397" duration="3892000" />
+      <workItem from="1583133237374" duration="7970000" />
+      <workItem from="1583252480085" duration="1523000" />
+      <workItem from="1584619135819" duration="644000" />
+      <workItem from="1584769671530" duration="2000" />
+      <workItem from="1584771925641" duration="1000" />
+      <workItem from="1584904436757" duration="10265000" />
+      <workItem from="1627285035444" duration="16000" />
+      <workItem from="1627285077144" duration="1187000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="542" y="215" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582956040775">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="542" y="215" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1582956040775" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584904792060">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1584904792060" />
+    <state x="277" y="54" key="SettingsEditor" timestamp="1583070247348">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="54" key="SettingsEditor/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1583070247348" />
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1582660954639">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1582660954639" />
+  </component>
+</project>
