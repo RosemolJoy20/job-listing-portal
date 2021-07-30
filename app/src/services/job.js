@@ -20,25 +20,6 @@ export default class {
         return result;
     }
 
-    static get = async id => {
-        let result = {
-            data: null,
-            error: null
-        };
-
-        await axios.get(`${process.env.REACT_APP_API_URL}/jobs/${id}`)
-            .then((resp) => {
-                if (resp.status === 200) {
-                    result.data = resp.data;
-                }
-            })
-            .catch((err) => {
-                result.error = err.response.data;
-            });
-
-        return result;
-    }
-
     static getAll = async () => {
         let result = {
             data: null,
